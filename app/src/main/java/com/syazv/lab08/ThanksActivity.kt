@@ -1,11 +1,7 @@
 package com.syazv.lab08
 
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
-import com.syazv.lab08.databinding.ActivityMainBinding
 import com.syazv.lab08.databinding.ActivityThanksBinding
 
 class ThanksActivity : AppCompatActivity() {
@@ -21,5 +17,12 @@ class ThanksActivity : AppCompatActivity() {
 
         binding.myFullName.text = intent.getStringExtra("name")
         binding.myPhoneNumber.text = intent.getStringExtra("phone")
+        binding.sizeVerifyTextView.text = intent.getStringExtra("size")
+        binding.pickupDateVerifTextView.text = intent.getStringExtra("date")
+        binding.pickupTimeVerifTextView.text = intent.getStringExtra("time")
+
+        binding.sendBtn.setOnClickListener {
+            binding.ratingTextView.text = binding.ratingBarSelected.rating.toString()
+        }
     }
 }
